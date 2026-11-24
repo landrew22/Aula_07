@@ -1,15 +1,10 @@
-name: CI - Build e Testes (Aula 09)
+name: Java CI Pipeline
 
-on:
-  push:
-    branches: [ "main", "develop" ]
-  pull_request:
-    branches: [ "main", "develop" ]
+on: [push, pull_request]
 
 jobs:
   build-and-test:
     runs-on: ubuntu-latest
-
     steps:
       - name: Checkout do código
         uses: actions/checkout@v4
@@ -20,5 +15,12 @@ jobs:
           distribution: "temurin"
           java-version: "17"
 
-      - name: Executar build e testes com Maven
-        run: mvn -B test
+      - name: Build with Maven
+        run: mvn clean package
+
+      - name: Run Unit Tests
+        run: mvn test
+
+      - name: Code Quality Check
+        run: mvn checkstyle:check
+        continue-on-error: false
