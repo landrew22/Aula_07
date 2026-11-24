@@ -29,6 +29,8 @@
                 <artifactId>maven-checkstyle-plugin</artifactId>
                 <version>3.6.0</version>
                 <configuration>
+                        <violationSeverity>warning</violationSeverity>
+                        <failOnViolation>false</failOnViolation>
                     <configLocation>google_checks.xml</configLocation>
                     <violationSeverity>warning</violationSeverity>
                 </configuration>

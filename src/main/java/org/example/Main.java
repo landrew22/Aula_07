@@ -3,11 +3,20 @@ package org.example;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
+/**
+ * Classe principal para execução dos testes da Aula 05.
+ */
 public class Main {
 
+  /** Logger da aplicação. */
   private static final Logger logger = LogManager.getLogger(Main.class);
 
-  public static void main(String[] args) {
+  /**
+   * Executa os cenários de teste de conta e cadastro de usuário.
+   *
+   * @param args argumentos de linha de comando
+   */
+  public static void main(final String[] args) {
     logger.info("=== INICIANDO EXECUTÁVEL DA AULA 05 ===");
 
     // Teste 1: Operações Válidas
